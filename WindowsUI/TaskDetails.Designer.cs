@@ -43,7 +43,7 @@ namespace WindowsUI
             this.lblEndDate = new MaterialSkin.Controls.MaterialLabel();
             this.lblCurrentState = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnUpdateTask = new Bunifu.Framework.UI.BunifuImageButton();
             this.lstMembers = new System.Windows.Forms.ListBox();
             this.btnRemoveMember = new Bunifu.Framework.UI.BunifuImageButton();
             this.CmbEmployeeList = new MetroFramework.Controls.MetroComboBox();
@@ -54,7 +54,7 @@ namespace WindowsUI
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnDeleteTask = new Bunifu.Framework.UI.BunifuImageButton();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnUpdateTask)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRemoveMember)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddMember)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDeleteTask)).BeginInit();
@@ -138,7 +138,7 @@ namespace WindowsUI
             this.lblEstimatedDate.Depth = 0;
             this.lblEstimatedDate.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblEstimatedDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblEstimatedDate.Location = new System.Drawing.Point(176, 446);
+            this.lblEstimatedDate.Location = new System.Drawing.Point(144, 446);
             this.lblEstimatedDate.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblEstimatedDate.Name = "lblEstimatedDate";
             this.lblEstimatedDate.Size = new System.Drawing.Size(108, 19);
@@ -151,7 +151,7 @@ namespace WindowsUI
             this.materialLabel5.Depth = 0;
             this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel5.Location = new System.Drawing.Point(176, 420);
+            this.materialLabel5.Location = new System.Drawing.Point(144, 420);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
             this.materialLabel5.Size = new System.Drawing.Size(112, 19);
@@ -177,7 +177,7 @@ namespace WindowsUI
             this.materialLabel7.Depth = 0;
             this.materialLabel7.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel7.Location = new System.Drawing.Point(600, 402);
+            this.materialLabel7.Location = new System.Drawing.Point(272, 420);
             this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel7.Name = "materialLabel7";
             this.materialLabel7.Size = new System.Drawing.Size(67, 19);
@@ -190,7 +190,7 @@ namespace WindowsUI
             this.lblEndDate.Depth = 0;
             this.lblEndDate.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblEndDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblEndDate.Location = new System.Drawing.Point(601, 428);
+            this.lblEndDate.Location = new System.Drawing.Point(273, 446);
             this.lblEndDate.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblEndDate.Name = "lblEndDate";
             this.lblEndDate.Size = new System.Drawing.Size(65, 19);
@@ -223,20 +223,20 @@ namespace WindowsUI
             this.materialLabel9.TabIndex = 16;
             this.materialLabel9.Text = "Current State :";
             // 
-            // bunifuImageButton1
+            // btnUpdateTask
             // 
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.bunifuImageButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
-            this.bunifuImageButton1.ImageActive = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.ImageActive")));
-            this.bunifuImageButton1.Location = new System.Drawing.Point(890, 39);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(67, 54);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 18;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
-            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
+            this.btnUpdateTask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnUpdateTask.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnUpdateTask.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdateTask.Image")));
+            this.btnUpdateTask.ImageActive = ((System.Drawing.Image)(resources.GetObject("btnUpdateTask.ImageActive")));
+            this.btnUpdateTask.Location = new System.Drawing.Point(890, 39);
+            this.btnUpdateTask.Name = "btnUpdateTask";
+            this.btnUpdateTask.Size = new System.Drawing.Size(67, 54);
+            this.btnUpdateTask.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnUpdateTask.TabIndex = 18;
+            this.btnUpdateTask.TabStop = false;
+            this.btnUpdateTask.Zoom = 10;
+            this.btnUpdateTask.Click += new System.EventHandler(this.bunifuImageButton1_Click);
             // 
             // lstMembers
             // 
@@ -357,7 +357,7 @@ namespace WindowsUI
             this.Controls.Add(this.CmbEmployeeList);
             this.Controls.Add(this.btnAddMember);
             this.Controls.Add(this.materialLabel6);
-            this.Controls.Add(this.bunifuImageButton1);
+            this.Controls.Add(this.btnUpdateTask);
             this.Controls.Add(this.lblCurrentState);
             this.Controls.Add(this.materialLabel9);
             this.Controls.Add(this.materialLabel4);
@@ -373,7 +373,7 @@ namespace WindowsUI
             this.Controls.Add(this.pnlDetail);
             this.Name = "TaskDetails";
             this.Text = "Task details";
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnUpdateTask)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRemoveMember)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddMember)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDeleteTask)).EndInit();
@@ -396,7 +396,7 @@ namespace WindowsUI
         private MaterialSkin.Controls.MaterialLabel lblEndDate;
         private MaterialSkin.Controls.MaterialLabel lblCurrentState;
         private MaterialSkin.Controls.MaterialLabel materialLabel9;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
+        private Bunifu.Framework.UI.BunifuImageButton btnUpdateTask;
         private System.Windows.Forms.ListBox lstMembers;
         private Bunifu.Framework.UI.BunifuImageButton btnRemoveMember;
         private MetroFramework.Controls.MetroComboBox CmbEmployeeList;

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using WindowsUI.Utilities;
 using Business.Abstract;
 using Business.DIResolvers;
+using Business.Utilities;
 using DevExpress.Xpo;
 using Entities;
 using MetroFramework.Controls;
@@ -35,6 +36,7 @@ namespace WindowsUI
             selectedEmployees = new List<Employee>();
             LoadData();
             this.Closed += OnClosed;
+            estDateTime.Value= DI.GetService<IBusinessHelper>().AvgTaskEstimated(Session.CurrentProject.Id);
         }
 
         private void OnClosed(object sender, System.EventArgs e)

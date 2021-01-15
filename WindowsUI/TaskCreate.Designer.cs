@@ -88,6 +88,7 @@ namespace WindowsUI
             // 
             // estDateTime
             // 
+            this.estDateTime.Enabled = false;
             this.estDateTime.Location = new System.Drawing.Point(32, 427);
             this.estDateTime.MinimumSize = new System.Drawing.Size(0, 29);
             this.estDateTime.Name = "estDateTime";

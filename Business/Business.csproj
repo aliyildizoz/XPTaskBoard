@@ -86,6 +86,8 @@
     <Compile Include="Results\ResultBase.cs" />
     <Compile Include="Results\SuccessDataResult.cs" />
     <Compile Include="Results\SuccessResult.cs" />
+    <Compile Include="Utilities\BusinessHelper.cs" />
+    <Compile Include="Utilities\IBusinessHelper.cs" />
     <Compile Include="Validation\EmployeeValidator.cs" />
     <Compile Include="Validation\ProjectValidator.cs" />
     <Compile Include="Validation\TaskStateValidator.cs" />
@@ -107,5 +109,6 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

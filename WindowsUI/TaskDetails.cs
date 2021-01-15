@@ -11,6 +11,7 @@ using WindowsUI.Utilities;
 using Business.Abstract;
 using Business.DIResolvers;
 using Business.Results;
+using Business.Utilities;
 using Entities;
 using MetroFramework;
 using Task = Entities.Task;
@@ -31,6 +32,7 @@ namespace WindowsUI
             _employeeService = DI.GetService<IEmployeeService>();
             LoadData(taskId);
             this.Closed += OnClosed;
+
         }
 
         private void OnClosed(object sender, System.EventArgs e)
@@ -38,8 +40,17 @@ namespace WindowsUI
             AppHelper.GetCurrentForm<MainForm>().LoadData();
             AppHelper.FocusMainForm();
         }
+
+        private void DoneDateLoad()
+        {
+            var result = DI.GetService<IBusinessHelper>().DoneDate(Session.CurrentProject.Id, _taskId);
+            this.lblEndDate.Visible = result.IsSuccessful;
+            this.materialLabel7.Visible = result.IsSuccessful;
+            this.lblEndDate.Text = result.Data.ToString("dd.MM.yyyy");
+        }
         private void LoadData(int taskId)
         {
+            
             CmbEmployeeList.Items.Clear();
             var emp = _employeeService.GetList().Data;
             _task = _taskService.GetByIdWithTaskTracks(taskId);
@@ -63,6 +74,7 @@ namespace WindowsUI
                 lstMembers.Items.Clear();
                 lstMembers.Items.AddRange(_task.Data.Employees.ToArray());
                 LoadEvents();
+                DoneDateLoad();
             }
 
         }

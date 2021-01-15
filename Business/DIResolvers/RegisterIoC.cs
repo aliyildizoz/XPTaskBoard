@@ -4,6 +4,7 @@ using System.Text;
 using Autofac;
 using Business.Abstract;
 using Business.Concrete;
+using Business.Utilities;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 using DataAccess.Concrete.EntityFramework.Context;
@@ -25,6 +26,8 @@ namespace Business.DIResolvers
             builder.RegisterType<EmployeeManager>().As<IEmployeeService>();
             builder.RegisterType<TaskManager>().As<ITaskService>();
             builder.RegisterType<ProjectManager>().As<IProjectService>();
+
+            builder.RegisterType<BusinessHelper>().As<IBusinessHelper>();
         }
     }
 }
