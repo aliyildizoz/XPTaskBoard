@@ -30,13 +30,8 @@ namespace WindowsUI
             _projectService = DI.GetService<IProjectService>();
             _taskService = DI.GetService<ITaskService>();
             InitializeComponent();
-            this.Closed += OnClosed;
         }
 
-        private void OnClosed(object sender, System.EventArgs e)
-        {
-            Application.Exit();
-        }
         public void LoadData()
         {
             pnlDoing.Controls.Clear();
@@ -187,6 +182,11 @@ namespace WindowsUI
                 TaskDetails details = new TaskDetails(task.Id);
                 details.Show();
             }
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            AppHelper.GetCurrentForm<SelectProject>().Show();
         }
     }
 }

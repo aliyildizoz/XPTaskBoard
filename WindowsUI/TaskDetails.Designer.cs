@@ -40,7 +40,7 @@ namespace WindowsUI
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
-            this.lblEndDate = new MaterialSkin.Controls.MaterialLabel();
+            this.lblCompDate = new MaterialSkin.Controls.MaterialLabel();
             this.lblCurrentState = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
             this.btnUpdateTask = new Bunifu.Framework.UI.BunifuImageButton();
@@ -54,10 +54,12 @@ namespace WindowsUI
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnDeleteTask = new Bunifu.Framework.UI.BunifuImageButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnUpdateTask)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRemoveMember)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddMember)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDeleteTask)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlDetail
@@ -109,10 +111,11 @@ namespace WindowsUI
             // materialLabel3
             // 
             this.materialLabel3.AutoSize = true;
+            this.materialLabel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(32, 421);
+            this.materialLabel3.ForeColor = System.Drawing.Color.White;
+            this.materialLabel3.Location = new System.Drawing.Point(5, 51);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(96, 19);
@@ -124,8 +127,8 @@ namespace WindowsUI
             this.lblCreatedDate.AutoSize = true;
             this.lblCreatedDate.Depth = 0;
             this.lblCreatedDate.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblCreatedDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblCreatedDate.Location = new System.Drawing.Point(32, 446);
+            this.lblCreatedDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.lblCreatedDate.Location = new System.Drawing.Point(5, 76);
             this.lblCreatedDate.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblCreatedDate.Name = "lblCreatedDate";
             this.lblCreatedDate.Size = new System.Drawing.Size(92, 19);
@@ -137,8 +140,8 @@ namespace WindowsUI
             this.lblEstimatedDate.AutoSize = true;
             this.lblEstimatedDate.Depth = 0;
             this.lblEstimatedDate.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblEstimatedDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblEstimatedDate.Location = new System.Drawing.Point(144, 446);
+            this.lblEstimatedDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.lblEstimatedDate.Location = new System.Drawing.Point(105, 76);
             this.lblEstimatedDate.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblEstimatedDate.Name = "lblEstimatedDate";
             this.lblEstimatedDate.Size = new System.Drawing.Size(108, 19);
@@ -148,10 +151,11 @@ namespace WindowsUI
             // materialLabel5
             // 
             this.materialLabel5.AutoSize = true;
+            this.materialLabel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.materialLabel5.Depth = 0;
             this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel5.Location = new System.Drawing.Point(144, 420);
+            this.materialLabel5.ForeColor = System.Drawing.Color.White;
+            this.materialLabel5.Location = new System.Drawing.Point(105, 50);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
             this.materialLabel5.Size = new System.Drawing.Size(112, 19);
@@ -174,28 +178,29 @@ namespace WindowsUI
             // materialLabel7
             // 
             this.materialLabel7.AutoSize = true;
+            this.materialLabel7.BackColor = System.Drawing.Color.Red;
             this.materialLabel7.Depth = 0;
             this.materialLabel7.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel7.Location = new System.Drawing.Point(272, 420);
+            this.materialLabel7.ForeColor = System.Drawing.Color.White;
+            this.materialLabel7.Location = new System.Drawing.Point(223, 50);
             this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel7.Name = "materialLabel7";
-            this.materialLabel7.Size = new System.Drawing.Size(67, 19);
+            this.materialLabel7.Size = new System.Drawing.Size(120, 19);
             this.materialLabel7.TabIndex = 7;
-            this.materialLabel7.Text = "End date";
+            this.materialLabel7.Text = "Completion date";
             // 
-            // lblEndDate
+            // lblCompDate
             // 
-            this.lblEndDate.AutoSize = true;
-            this.lblEndDate.Depth = 0;
-            this.lblEndDate.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblEndDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblEndDate.Location = new System.Drawing.Point(273, 446);
-            this.lblEndDate.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblEndDate.Name = "lblEndDate";
-            this.lblEndDate.Size = new System.Drawing.Size(65, 19);
-            this.lblEndDate.TabIndex = 6;
-            this.lblEndDate.Text = "EndDate";
+            this.lblCompDate.AutoSize = true;
+            this.lblCompDate.Depth = 0;
+            this.lblCompDate.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblCompDate.ForeColor = System.Drawing.Color.Red;
+            this.lblCompDate.Location = new System.Drawing.Point(224, 76);
+            this.lblCompDate.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblCompDate.Name = "lblCompDate";
+            this.lblCompDate.Size = new System.Drawing.Size(65, 19);
+            this.lblCompDate.TabIndex = 6;
+            this.lblCompDate.Text = "EndDate";
             // 
             // lblCurrentState
             // 
@@ -203,7 +208,7 @@ namespace WindowsUI
             this.lblCurrentState.Depth = 0;
             this.lblCurrentState.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblCurrentState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblCurrentState.Location = new System.Drawing.Point(143, 396);
+            this.lblCurrentState.Location = new System.Drawing.Point(115, 16);
             this.lblCurrentState.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblCurrentState.Name = "lblCurrentState";
             this.lblCurrentState.Size = new System.Drawing.Size(109, 19);
@@ -216,7 +221,7 @@ namespace WindowsUI
             this.materialLabel9.Depth = 0;
             this.materialLabel9.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel9.Location = new System.Drawing.Point(32, 396);
+            this.materialLabel9.Location = new System.Drawing.Point(6, 16);
             this.materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel9.Name = "materialLabel9";
             this.materialLabel9.Size = new System.Drawing.Size(105, 19);
@@ -309,7 +314,7 @@ namespace WindowsUI
             this.lstViewEvents.HideSelection = false;
             this.lstViewEvents.Location = new System.Drawing.Point(574, 99);
             this.lstViewEvents.Name = "lstViewEvents";
-            this.lstViewEvents.Size = new System.Drawing.Size(456, 276);
+            this.lstViewEvents.Size = new System.Drawing.Size(456, 387);
             this.lstViewEvents.TabIndex = 26;
             this.lstViewEvents.UseCompatibleStateImageBehavior = false;
             this.lstViewEvents.View = System.Windows.Forms.View.Details;
@@ -345,11 +350,29 @@ namespace WindowsUI
             this.btnDeleteTask.Zoom = 10;
             this.btnDeleteTask.Click += new System.EventHandler(this.btnDeleteTask_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lblCurrentState);
+            this.groupBox1.Controls.Add(this.materialLabel9);
+            this.groupBox1.Controls.Add(this.materialLabel5);
+            this.groupBox1.Controls.Add(this.materialLabel3);
+            this.groupBox1.Controls.Add(this.lblCreatedDate);
+            this.groupBox1.Controls.Add(this.materialLabel7);
+            this.groupBox1.Controls.Add(this.lblEstimatedDate);
+            this.groupBox1.Controls.Add(this.lblCompDate);
+            this.groupBox1.Location = new System.Drawing.Point(23, 387);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(349, 99);
+            this.groupBox1.TabIndex = 28;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
             // TaskDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1043, 485);
+            this.ClientSize = new System.Drawing.Size(1043, 502);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnDeleteTask);
             this.Controls.Add(this.lstViewEvents);
             this.Controls.Add(this.lstMembers);
@@ -358,15 +381,7 @@ namespace WindowsUI
             this.Controls.Add(this.btnAddMember);
             this.Controls.Add(this.materialLabel6);
             this.Controls.Add(this.btnUpdateTask);
-            this.Controls.Add(this.lblCurrentState);
-            this.Controls.Add(this.materialLabel9);
             this.Controls.Add(this.materialLabel4);
-            this.Controls.Add(this.lblEndDate);
-            this.Controls.Add(this.lblEstimatedDate);
-            this.Controls.Add(this.materialLabel7);
-            this.Controls.Add(this.materialLabel5);
-            this.Controls.Add(this.lblCreatedDate);
-            this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.pnlNotes);
             this.Controls.Add(this.materialLabel1);
@@ -377,6 +392,8 @@ namespace WindowsUI
             ((System.ComponentModel.ISupportInitialize)(this.btnRemoveMember)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddMember)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDeleteTask)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -393,7 +410,7 @@ namespace WindowsUI
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private MaterialSkin.Controls.MaterialLabel materialLabel7;
-        private MaterialSkin.Controls.MaterialLabel lblEndDate;
+        private MaterialSkin.Controls.MaterialLabel lblCompDate;
         private MaterialSkin.Controls.MaterialLabel lblCurrentState;
         private MaterialSkin.Controls.MaterialLabel materialLabel9;
         private Bunifu.Framework.UI.BunifuImageButton btnUpdateTask;
@@ -407,5 +424,6 @@ namespace WindowsUI
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private Bunifu.Framework.UI.BunifuImageButton btnDeleteTask;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

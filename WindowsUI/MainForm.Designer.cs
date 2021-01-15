@@ -157,21 +157,21 @@ namespace WindowsUI
             this.addEmployee.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.addEmployee.Image = ((System.Drawing.Image)(resources.GetObject("addEmployee.Image")));
             this.addEmployee.Name = "addEmployee";
-            this.addEmployee.Size = new System.Drawing.Size(180, 24);
+            this.addEmployee.Size = new System.Drawing.Size(179, 24);
             this.addEmployee.Text = "Add employee";
             this.addEmployee.Click += new System.EventHandler(this.addEmployee_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(176, 6);
             // 
             // editEmployee
             // 
             this.editEmployee.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.editEmployee.Image = ((System.Drawing.Image)(resources.GetObject("editEmployee.Image")));
             this.editEmployee.Name = "editEmployee";
-            this.editEmployee.Size = new System.Drawing.Size(180, 24);
+            this.editEmployee.Size = new System.Drawing.Size(179, 24);
             this.editEmployee.Text = "Edit employee";
             this.editEmployee.Click += new System.EventHandler(this.editEmployee_Click);
             // 
@@ -344,6 +344,7 @@ namespace WindowsUI
             this.Text = "Main";
             this.TransparencyKey = System.Drawing.Color.Empty;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

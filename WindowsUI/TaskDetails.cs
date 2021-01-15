@@ -44,9 +44,9 @@ namespace WindowsUI
         private void DoneDateLoad()
         {
             var result = DI.GetService<IBusinessHelper>().DoneDate(Session.CurrentProject.Id, _taskId);
-            this.lblEndDate.Visible = result.IsSuccessful;
+            this.lblCompDate.Visible = result.IsSuccessful;
             this.materialLabel7.Visible = result.IsSuccessful;
-            this.lblEndDate.Text = result.Data.ToString("dd.MM.yyyy");
+            this.lblCompDate.Text = result.Data.ToString("dd.MM.yyyy");
         }
         private void LoadData(int taskId)
         {
@@ -57,12 +57,15 @@ namespace WindowsUI
 
             if (_task.IsSuccessful)
             {
+                Color color = AppHelper.GetStateColor(_task.Data.TaskState.Name);
                 lblCreatedDate.Text = _task.Data.CreateDate.ToString("dd.MM.yyyy");
                 lblEstimatedDate.Text = _task.Data.EstimatedDate.ToString("dd.MM.yyyy");
                 pnlDetail.Text = _task.Data.Details;
                 pnlNotes.Text = _task.Data.Notes;
                 CmbEmployeeList.Items.Clear();
                 lblCurrentState.Text = _task.Data.TaskState.Name;
+                lblCurrentState.ForeColor = color;
+                materialLabel9.ForeColor = color;
                 foreach (var employee in emp)
                 {
                     if (_task.Data.Employees.FirstOrDefault(employee1 => employee1.Id == employee.Id) == null)
