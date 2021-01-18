@@ -10,7 +10,7 @@ namespace Business.Validation
     {
         public TaskStateValidator()
         {
-            RuleFor(ts => ts.Name).NotNull();
+            RuleFor(ts => ts.Name).NotNull().NotEmpty();
         }
     }
 }

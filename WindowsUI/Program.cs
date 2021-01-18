@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Autofac;
 using Business.DIResolvers;
+using DevExpress.Utils.Extensions;
+using FluentValidation;
 
 namespace WindowsUI
 {
@@ -28,13 +30,11 @@ namespace WindowsUI
                     Application.Restart();
                 }
             }
-
         }
         static void AppRun()
         {
-            Application.EnableVisualStyles();
+            Application.EnableVisualStyles();   
             Application.SetCompatibleTextRenderingDefault(false);
-
             Application.Run(new SelectProject());
         }
 

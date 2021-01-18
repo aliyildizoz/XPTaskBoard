@@ -11,6 +11,7 @@ using WindowsUI.Utilities;
 using Business.Abstract;
 using Business.DIResolvers;
 using Business.Utilities;
+using DevExpress.Utils.Extensions;
 using DevExpress.Xpo;
 using Entities;
 using MetroFramework.Controls;
@@ -26,9 +27,11 @@ namespace WindowsUI
         private TaskStateBaseNames _taskStateNames;
         private Entities.Task createTask;
         private List<Employee> selectedEmployees;
+        private IBusinessHelper _businessHelper;
         public TaskCreate()
         {
             _taskService = DI.GetService<ITaskService>();
+            _businessHelper = DI.GetService<IBusinessHelper>();
             _employeeService = DI.GetService<IEmployeeService>();
             InitializeComponent();
             createTask = new Entities.Task();
@@ -36,7 +39,7 @@ namespace WindowsUI
             selectedEmployees = new List<Employee>();
             LoadData();
             this.Closed += OnClosed;
-            estDateTime.Value= DI.GetService<IBusinessHelper>().AvgTaskEstimated(Session.CurrentProject.Id);
+            estDateTime.Value = _businessHelper.AvgTaskEstimated(Session.CurrentProject.Id);
         }
 
         private void OnClosed(object sender, System.EventArgs e)
@@ -69,15 +72,21 @@ namespace WindowsUI
             createTask.Notes = rctNotes.Text;
             createTask.ProjectId = Session.CurrentProject.Id;
             createTask.EstimatedDate = estDateTime.Value;
-            var result = _taskService.Add(createTask);
-            if (result.IsSuccessful)
+            AppHelper.ValidationHandling(() =>
             {
-                AddRangeEmployee(result.Data);
-            }
-            var form = AppHelper.GetCurrentForm<MainForm>();
-            this.Close();
-            form.Show();
-            form.LoadData();
+                var result = _taskService.Add(createTask);
+                if (result.IsSuccessful)
+                {
+                    AddRangeEmployee(result.Data);
+                }
+                var form = AppHelper.GetCurrentForm<MainForm>();
+                this.Close();
+                form.Show();
+                form.LoadData();
+            });
+
+
+
         }
 
         void AddRangeEmployee(Task task)

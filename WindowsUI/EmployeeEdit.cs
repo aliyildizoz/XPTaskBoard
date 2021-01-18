@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using WindowsUI.Utilities;
 using Business.Abstract;
 using Business.DIResolvers;
+using Business.Utilities;
 using Entities;
 
 namespace WindowsUI
@@ -17,8 +18,11 @@ namespace WindowsUI
     public partial class EmployeeEdit : MetroFramework.Forms.MetroForm
     {
         private IEmployeeService _employeeService;
+        private IBusinessHelper _businessHelper;
+
         public EmployeeEdit()
         {
+            _businessHelper = DI.GetService<IBusinessHelper>();
             InitializeComponent();
             _employeeService = DI.GetService<IEmployeeService>();
             EmployeeListFill(_employeeService.GetList().Data);
@@ -111,8 +115,12 @@ namespace WindowsUI
                 {
                     employee.LastName = txtLastName.Text;
                     employee.FirstName = txtFirstName.Text;
-                    _employeeService.Update(employee);
-                    EmployeeListFill();
+                    AppHelper.ValidationHandling(() =>
+                    {
+                        _employeeService.Update(employee);
+                        EmployeeListFill();
+                    });
+
                 }
                 else
                 {

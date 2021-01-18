@@ -10,7 +10,11 @@ namespace Business.Validation
     {
         public TaskValidator()
         {
-            RuleFor(t => t.Details).NotNull();
+            RuleFor(t => t.Details).NotNull().NotEmpty();
+            RuleFor(t => t.TaskStateId).NotNull().NotEmpty();
+            RuleFor(t => t.ProjectId).NotNull().NotEmpty();
+            RuleFor(t => t.Id).NotNull();
+            RuleFor(t => t.EstimatedDate).NotNull().NotEmpty();
         }
     }
 }

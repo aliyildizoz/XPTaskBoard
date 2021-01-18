@@ -10,8 +10,8 @@ namespace Business.Validation
     {
         public EmployeeValidator()
         {
-            RuleFor(user => user.FirstName).NotNull().MaximumLength(100);
-            RuleFor(user => user.LastName).NotNull().MaximumLength(100);
+            RuleFor(user => user.FirstName).NotNull().MaximumLength(100).NotEmpty();
+            RuleFor(user => user.LastName).NotNull().MaximumLength(100).NotEmpty();
         }
     }
 }

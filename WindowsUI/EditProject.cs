@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using WindowsUI.Utilities;
 using Business.Abstract;
 using Business.DIResolvers;
+using Business.Utilities;
+using DevExpress.Utils.Extensions;
 using Entities;
 using MetroFramework.Forms;
 
@@ -19,8 +21,11 @@ namespace WindowsUI
     {
 
         private IProjectService _projectService;
+        private IBusinessHelper _businessHelper;
+
         public EditProject()
         {
+            _businessHelper = DI.GetService<IBusinessHelper>();
             InitializeComponent();
             _projectService = DI.GetService<IProjectService>();
             ProjectListFill(_projectService.GetList().Data);
@@ -101,17 +106,22 @@ namespace WindowsUI
                 if (txtProjectName.Text != project.Name && !string.IsNullOrEmpty(txtProjectName.Text))
                 {
                     project.Name = txtProjectName.Text;
-                    _projectService.Update(project);
-                    if (Session.CurrentProject.Id == project.Id)
+
+                    AppHelper.ValidationHandling(() =>
                     {
-                        Session.CurrentProject.Name = project.Name;
-                        var mainForm = AppHelper.GetCurrentForm<MainForm>();
-                        mainForm.Close();
-                        MainForm form = new MainForm();
-                        form.Show();
-                        this.Close();
-                    }
-                    ProjectListFill();
+                        _projectService.Update(project);
+                        if (Session.CurrentProject.Id == project.Id)
+                        {
+                            Session.CurrentProject.Name = project.Name;
+                            var mainForm = AppHelper.GetCurrentForm<MainForm>();
+                            mainForm.Close();
+                            MainForm form = new MainForm();
+                            form.Show();
+                            this.Close();
+                        }
+                        ProjectListFill();
+                    });
+
                 }
                 else
                 {

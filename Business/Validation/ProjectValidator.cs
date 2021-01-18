@@ -10,7 +10,7 @@ namespace Business.Validation
     {
         public ProjectValidator()
         {
-            RuleFor(p => p.Name).NotNull();
+            RuleFor(p => p.Name).NotNull().NotEmpty();
         }
     }
 }

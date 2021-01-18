@@ -11,6 +11,8 @@ using WindowsUI.Utilities;
 using Business.Abstract;
 using Business.DIResolvers;
 using Business.Results;
+using Business.Utilities;
+using DevExpress.Utils.Extensions;
 using Entities;
 using MetroFramework.Controls;
 using Task = Entities.Task;
@@ -23,8 +25,11 @@ namespace WindowsUI
         private IEmployeeService _employeeService;
         private int _taskId;
         private IDataResult<Task> _task;
+        private IBusinessHelper _businessHelper;
+
         public TaskEdit(int taskId)
         {
+            _businessHelper = DI.GetService<IBusinessHelper>();
             _taskId = taskId;
             InitializeComponent();
             _taskService = DI.GetService<ITaskService>();
@@ -141,13 +146,17 @@ namespace WindowsUI
         {
             _task.Data.Details = rctDetails.Text;
             _task.Data.Notes = rctNotes.Text;
-            _taskService.Update(_task.Data);
 
-            var form = AppHelper.GetCurrentForm<MainForm>();
-            TaskDetails taskDetails = new TaskDetails(_taskId);
-            this.Close();
-            form.LoadData();
-            taskDetails.Show();
+            AppHelper.ValidationHandling(() =>
+            {
+                var result = _taskService.Update(_task.Data);
+                var form = AppHelper.GetCurrentForm<MainForm>();
+                TaskDetails taskDetails = new TaskDetails(_taskId);
+                this.Close();
+                form.LoadData();
+                taskDetails.Show();
+            });
+
         }
 
         private void OnCheckedChanged(object sender, System.EventArgs e)

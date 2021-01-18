@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mime;
 using System.Text;
 using System.Threading.Tasks;
 using Business.Abstract;
 using Business.Results;
 using DataAccess.Abstract;
 using Entities;
+using FluentValidation;
 
 namespace Business.Utilities
 {
@@ -91,6 +93,18 @@ namespace Business.Utilities
         {
             var task = _taskDal.Get(t => t.ProjectId == projectId && t.Id == taskId);
             return task.TaskStateId == (int)TaskStateBaseNames.Done;
+        }
+
+        public void AddValidationExTryCatch(Action tryFunc, Predicate<ValidationException> catchFunc)
+        {
+            try
+            {
+                tryFunc.Invoke();
+            }
+            catch (ValidationException exception)
+            {
+                catchFunc.Invoke(exception);
+            }
         }
     }
 }

@@ -5,13 +5,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Business.DIResolvers;
+using Business.Utilities;
+using DevExpress.Utils.Extensions;
 using Entities;
+using FluentValidation;
 using MetroFramework;
 
 namespace WindowsUI.Utilities
 {
     public static class AppHelper
     {
+        private static IBusinessHelper _businessHelper;
+        static AppHelper()
+        {
+            _businessHelper = DI.GetService<IBusinessHelper>();
+        }
         public static Color GetStateColor(TaskStateNames baseNames)
         {
             switch (baseNames)
@@ -37,16 +46,16 @@ namespace WindowsUI.Utilities
             desc = desc.ToLower();
             if (desc.Contains("to do") || desc.Contains("todo"))
             {
-                color = MetroColors.Red;
+                color = Color.Red;
             }
             else if (desc.Contains("doing"))
             {
-                color = MetroColors.Yellow;
+                color = Color.Yellow;
 
             }
             else if (desc.Contains("done"))
             {
-                color = MetroColors.Green;
+                color = Color.Lime;
             }
             else if (desc.Contains("created"))
             {
@@ -72,6 +81,25 @@ namespace WindowsUI.Utilities
                 res.Focus();
                 res.Focus();
             }
+        }
+
+        public static void ValidationHandling(Action action)
+        {
+            _businessHelper.AddValidationExTryCatch(() =>
+            {
+                action.Invoke();
+            }, exception =>
+            {
+                string message = "";
+                exception.Errors.Select(failure => "*" + failure.ErrorMessage + Environment.NewLine).ForEach(
+                    s =>
+                    {
+                        message += s;
+                    });
+                MessageBox.Show(message, "Validation error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return false;
+            });
         }
     }
 
