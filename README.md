@@ -1,6 +1,5 @@
 # XPTaskBoard
-![Screen shot](https://raw.githubusercontent.com/AliYildizoz909/XPTaskBoard/master/SS/SS.png)
-
+![Gif](https://raw.githubusercontent.com/AliYildizoz909/XPTaskBoard/master/SS/AppGif.gif)
 ## Türkçe
 > **Yazılım sınama dönem projesidir**.
 ### Uygulamanın amacı 
