@@ -1,7 +1,7 @@
 # XPTaskBoard
 ![Gif](https://raw.githubusercontent.com/AliYildizoz909/XPTaskBoard/master/SS/AppGif.gif)
 ## Türkçe
-> **Yazılım sınama dönem projesidir**.
+
 ### Uygulamanın amacı 
 
 **“divide and rule policy”** politikasını izleyerek projeleri daha yönetilebilir ve sürdürülebilir yapmak. Projemiz de bu doğrultuda görevlerin tanımlanmasını ve çalışan atamasını yaparak projelerin takibi yapılır. Ayrıca ortalama bitiş tarihine göre task bitiş tahmini yapılmaktadır, bu sayede hangi taskın ortalamadan daha erken veya daha geç tamamlandığını görebilir ve bu tipteki tasklara göre görev ataması yapılabilir.
@@ -25,7 +25,7 @@
 	 - Mevcut çalışanı güncelleme.
 	 - Mevcut çalışanı silmek.
 ## English
-> **It is a software testing term project.**
+
 ### Purpose of the application
 
 To make projects more manageable and sustainable by following the policy of  **"divide and rule policy"**. In this direction, our project is followed up by defining the tasks and assigning employees. In addition, task completion estimation is made according to the average end date, so you can see which task is completed earlier or later than the average and assign tasks according to this type of task.
