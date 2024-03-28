@@ -1,30 +1,5 @@
 # XPTaskBoard
 ![Gif](https://raw.githubusercontent.com/AliYildizoz909/XPTaskBoard/master/SS/AppGif.gif)
-## Türkçe
-
-### Uygulamanın amacı 
-
-**“divide and rule policy”** politikasını izleyerek projeleri daha yönetilebilir ve sürdürülebilir yapmak. Projemiz de bu doğrultuda görevlerin tanımlanmasını ve çalışan atamasını yaparak projelerin takibi yapılır. Ayrıca ortalama bitiş tarihine göre task bitiş tahmini yapılmaktadır, bu sayede hangi taskın ortalamadan daha erken veya daha geç tamamlandığını görebilir ve bu tipteki tasklara göre görev ataması yapılabilir.
-
-#### Özellikler
-
- 1. **Task**
-	 - Yeni bir task yaratma.
-	 - Mevcut bir taska çalışan ataması yapmak.
-	 - Mevcut bir taska atanmış bir çalışanı kaldırmak.
-	 - Mevcut bir taskı silmek.
-	 - Mevcut bir taskı güncellemek.
-	 - Mevcut bir taskın durumunu değiştirmek.
- 2. **Proje**
-	  - Yeni bir proje yaratma.
-	  - Mevcut projeyi tekrar adlandırma.
-	  - Mevcut projeyi silmek.
-	  - Uygulama açılırken bir proje seçmek.
-3. **Çalışan**
-	 - Yeni bir çalışan yaratma.
-	 - Mevcut çalışanı güncelleme.
-	 - Mevcut çalışanı silmek.
-## English
 
 ### Purpose of the application
 
@@ -49,7 +24,7 @@ To make projects more manageable and sustainable by following the policy of  **"
 	- Updating the current employee.
 	- Deleting the current employee.
 
-## Kullanılan teknolojiler - Used technologies
+## Used technologies
 
  - MsSql veri tabanı - database.
  - Entity Framework **(v6.4.4)**
@@ -59,6 +34,6 @@ To make projects more manageable and sustainable by following the policy of  **"
  - Fluent Validation **(v9.3.0)**
  - Repository Patern
  - Dependency Injection **AutoFac(v6.1.0)**
- - N katmanlı mimari - N-Tier Architecture
+ - N-Tier Architecture
 ## Database Diagram
 ![Database Diagram](https://raw.githubusercontent.com/AliYildizoz909/XPTaskBoard/master/SS/DatabaseDiagram.png)
