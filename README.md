@@ -26,7 +26,7 @@ To make projects more manageable and sustainable by following the policy of  **"
 
 ## Used technologies
 
- - MsSql veri tabanı - database.
+ - MsSql database.
  - Entity Framework **(v6.4.4)**
  - Windows Form UI
  - Metro framework **(v.1.4.0)**
